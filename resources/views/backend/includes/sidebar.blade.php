@@ -18,6 +18,15 @@
                 :text="__('Dashboard')" />
         </li>
 
+        <li class="c-sidebar-nav-item">
+            <x-utils.link
+                class="c-sidebar-nav-link"
+                :href="route('admin.news.index')"
+                :active="activeClass(Route::is('admin.news.index'), 'c-active')"
+                icon="c-sidebar-nav-icon far fa-newspaper"
+                :text="__('News')" />
+        </li>
+
         @if (
             $logged_in_user->hasAllAccess() ||
             (
