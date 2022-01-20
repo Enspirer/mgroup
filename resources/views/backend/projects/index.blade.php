@@ -1,6 +1,6 @@
 @extends('backend.layouts.app')
 
-@section('title', __('News'))
+@section('title', __('Projects'))
 
 @section('content')
     
@@ -10,9 +10,9 @@
 
             <div class="card">
                 <div class="card-header">
-                    <strong>News&nbsp;</strong>
+                    <strong>Projects&nbsp;</strong>
 
-                    <a href="{{route('admin.news.create')}}" class="btn btn-primary pull-right ml-4">Create New</a>
+                    <a href="{{route('admin.projects.create')}}" class="btn btn-primary pull-right ml-4">Create New</a>
                    
                 </div><!--card-header-->
 
@@ -21,10 +21,9 @@
                         <thead>
                             <tr>
                                 <th scope="col">#ID</th>
-                                <th scope="col">Image</th>
                                 <th scope="col">Title</th>
+                                <th scope="col">Country</th>
                                 <th scope="col">Order</th>
-                                <th scope="col">Featured</th>
                                 <th scope="col">Status</th>
                                 <th scope="col">Option</th>
                             </tr>
@@ -73,15 +72,14 @@
         $(function () {
             var table = $('#villadatatable').DataTable({
                 processing: true,
-                ajax: "{{route('admin.news.getdetails')}}",
+                ajax: "{{route('admin.projects.getdetails')}}",
                 serverSide: true,
                 order: [[0, "desc"]],
                 columns: [
                     {data: 'id', name: 'id'},
-                    {data: 'images', name: 'images'},
                     {data: 'title', name: 'title'},
+                    {data: 'country', name: 'country'},
                     {data: 'order', name: 'order'},
-                    {data: 'featured', name: 'featured'},
                     {data: 'status', name: 'status'},
                     {data: 'action', name: 'action', orderable: false, searchable: false},
                 ]
@@ -97,7 +95,7 @@
 
             $('#ok_button').click(function(){
             $.ajax({
-            url:"news/delete/"+user_id,
+            url:"projects/delete/"+user_id,
             
             success:function(data)
             {

@@ -37,6 +37,13 @@
                             <input type="number" class="form-control" name="order" required>
                         </div>
                         <div class="form-group">
+                            <label>Featured <span class="text-danger">*</span></label>
+                            <select class="form-control custom-select" name="featured" required>
+                                <option value="Enabled">Enable</option>   
+                                <option value="Disabled" selected>Disable</option>                                
+                            </select>
+                        </div>
+                        <div class="form-group">
                             <label>Status <span class="text-danger">*</span></label>
                             <select class="form-control custom-select" name="status" required>
                                 <option value="Enabled">Enable</option>   

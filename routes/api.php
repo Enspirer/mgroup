@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Frontend\HomeController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +18,8 @@ use Illuminate\Http\Request;
 //Route::middleware('auth:api')->get('/user', function (Request $request) {
 //    return $request->user();
 //});
+
+Route::get('get_all_news', [HomeController::class, 'get_all_news'])->name('get_all_news');
+Route::get('get_featured_news', [HomeController::class, 'get_featured_news'])->name('get_featured_news');
+
+Route::get('get_all_projects', [HomeController::class, 'get_all_projects'])->name('get_all_projects');

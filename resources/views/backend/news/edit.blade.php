@@ -37,6 +37,13 @@
                             </div>
                         </div>
                         <div class="form-group">
+                            <label>Featured <span class="text-danger">*</span></label>
+                            <select class="form-control custom-select" name="featured" required>
+                                <option value="Enabled" {{$news->featured == 'Enabled' ? "selected" : ""}}>Enable</option>   
+                                <option value="Disabled" {{$news->featured == 'Disabled' ? "selected" : ""}}>Disable</option>                                
+                            </select>
+                        </div>
+                        <div class="form-group">
                             <label>Status <span class="text-danger">*</span></label>
                             <select class="form-control custom-select" name="status" required>
                                 <option value="Enabled" {{$news->status == 'Enabled' ? "selected" : ""}}>Enable</option>   
