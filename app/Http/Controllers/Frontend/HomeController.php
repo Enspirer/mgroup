@@ -105,6 +105,45 @@ class HomeController extends Controller
     }
 
 
+    public function get_one_news($id)
+    {
+        $single_news = News::where('status','Enabled')->where('id',$id)->first();
+        // dd($single_news);
+
+        if($single_news != null){
+
+            $upload_image = Upload::where('id',$single_news->images)->first();  
+            $upload_final_name = ltrim($upload_image->file_name, 'uploads/all');    
+    
+            $news_images = ['id' => "$upload_image->id",'image' => $upload_final_name];
+    
+            $new_array = [
+                'id' => $single_news->id,
+                'headline' => $single_news->title,
+                'description' => $single_news->description,
+                'date' => $single_news->created_at->toDateString(),
+                'status' => "1",
+                'images' => [$news_images]
+            ];
+           
+            // dd($new_array);
+    
+            $final_out = [
+                'status' => 200, 
+                'data' => [$new_array]
+            ];    
+            
+            return response()->json($final_out); 
+
+        }else{
+
+            return null;    
+
+        }        
+
+    }
+
+
 
 
 

@@ -21,5 +21,6 @@ use App\Http\Controllers\Frontend\HomeController;
 
 Route::get('get_all_news', [HomeController::class, 'get_all_news'])->name('get_all_news');
 Route::get('get_featured_news', [HomeController::class, 'get_featured_news'])->name('get_featured_news');
+Route::get('get_one_news/{id}', [HomeController::class, 'get_one_news'])->name('get_one_news');
 
 Route::get('get_all_projects/{country_code}', [HomeController::class, 'get_all_projects'])->name('get_all_projects');
