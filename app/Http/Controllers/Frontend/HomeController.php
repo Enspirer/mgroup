@@ -28,12 +28,10 @@ class HomeController extends Controller
        
         if(count($all_news) != 0){
 
-            $output = [];
+            $output = array();
 
             foreach($all_news as $key => $news){
-                // dd($news);      
-                
-                $upload_image = Upload::where('id',$news->images)->first();  
+                $upload_image = Upload::where('id',$news->images)->first();
                 $upload_final_name = ltrim($upload_image->file_name, 'uploads/all');    
 
                 $news_images = ['id' => "$upload_image->id",'image' => $upload_final_name];
@@ -47,15 +45,19 @@ class HomeController extends Controller
                     'status' => "1",
                     'images' => [$news_images]
                 ];
+
+
                 array_push($output,$new_array);
             }
+
+            $indection = array_values($output);
 
             $final_out = [
                 'status' => 200, 
                 'data' => $output
             ];
-            
-            return response()->json($final_out);
+
+            return response()->json($indection);
 
         }else{
 
