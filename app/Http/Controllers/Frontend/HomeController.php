@@ -108,9 +108,9 @@ class HomeController extends Controller
 
 
 
-    public function get_all_projects()
+    public function get_all_projects($country_code)
     {
-        $all_projects = Projects::where('status','Enabled')->get();
+        $all_projects = Projects::where('status','Enabled')->where('country',$country_code)->get();
         // dd($all_projects);
        
         if(count($all_projects) != 0){
