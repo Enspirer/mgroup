@@ -84,14 +84,14 @@ class HomeController extends Controller
                 'description' => $featured_news->description,
                 'date' => $featured_news->created_at->toDateString(),
                 'status' => "1",
-                'images' => [$news_images]
+                'images' => $news_images
             ];
            
             // dd($new_array);
     
             $final_out = [
                 'status' => 200, 
-                'data' => [$new_array]
+                'data' => $new_array
             ];    
             
             return response()->json($final_out); 
