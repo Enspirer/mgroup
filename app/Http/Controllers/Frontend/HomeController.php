@@ -28,7 +28,7 @@ class HomeController extends Controller
        
         if(count($all_news) != 0){
 
-            $output = array();
+            $output = [];
 
             foreach($all_news as $key => $news){
                 $upload_image = Upload::where('id',$news->images)->first();
@@ -50,14 +50,13 @@ class HomeController extends Controller
                 array_push($output,$new_array);
             }
 
-            $indection = array_values($output);
 
             $final_out = [
                 'status' => 200, 
                 'data' => $output
             ];
 
-            return response()->json($indection);
+            return response()->json($final_out);
 
         }else{
 
