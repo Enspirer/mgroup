@@ -2,7 +2,7 @@
     <div class="container">
         <x-utils.link
             :href="route('frontend.index')"
-            :text="appName()"
+            :text="'MG Group of Companies'"
             class="navbar-brand" />
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="@lang('Toggle navigation')">
@@ -10,20 +10,7 @@
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ml-auto">
-                @if(config('boilerplate.locale.status') && count(config('boilerplate.locale.languages')) > 1)
-                    <li class="nav-item dropdown">
-                        <x-utils.link
-                            :text="__(getLocaleName(app()->getLocale()))"
-                            class="nav-link dropdown-toggle"
-                            id="navbarDropdownLanguageLink"
-                            data-toggle="dropdown"
-                            aria-haspopup="true"
-                            aria-expanded="false" />
-
-                        @include('includes.partials.lang')
-                    </li>
-                @endif
+            <ul class="navbar-nav ml-auto">                
 
                 @guest
                     <li class="nav-item">
@@ -76,13 +63,7 @@
                                     :active="activeClass(Route::is('frontend.user.dashboard'))"
                                     :text="__('Dashboard')"
                                     class="dropdown-item"/>
-                            @endif
-
-                            <x-utils.link
-                                :href="route('frontend.user.account')"
-                                :active="activeClass(Route::is('frontend.user.account'))"
-                                :text="__('My Account')"
-                                class="dropdown-item" />
+                            @endif                        
 
                             <x-utils.link
                                 :text="__('Logout')"
