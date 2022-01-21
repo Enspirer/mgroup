@@ -13,7 +13,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
 
     @stack('before-styles')
-    <link href="{{ mix('css/backend.css') }}" rel="stylesheet">
+    <link href="{{ url('css/backend.css') }}" rel="stylesheet">
     <livewire:styles />
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -75,9 +75,9 @@
     </div><!--c-wrapper-->
 
     @stack('before-scripts')
-    <script src="{{ mix('js/manifest.js') }}"></script>
-    <script src="{{ mix('js/vendor.js') }}"></script>
-    <script src="{{ mix('js/backend.js') }}"></script>
+    <script src="{{ url('js/manifest.js') }}"></script>
+    <script src="{{ url('js/vendor.js') }}"></script>
+    <script src="{{ url('js/backend.js') }}"></script>
     <livewire:scripts />
 
     <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
