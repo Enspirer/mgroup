@@ -16,7 +16,7 @@
                         </div>
                         <div class="form-group">
                             <label>Description <span class="text-danger">*</span></label>
-                            <textarea type="text" id="editor" class="form-control" name="description"></textarea>
+                            <textarea type="text" class="form-control" name="description" rows="4" required></textarea>
                         </div>
                         <div class="form-group">
                             <label>Country <span class="text-danger">*</span></label>
@@ -303,21 +303,6 @@
 
 
 <br><br>
-
-<script>
-	ClassicEditor
-		.create( document.querySelector( '#editor' ), {
-			// toolbar: [ 'heading', '|', 'bold', 'italic', 'link' ]
-		} )
-		.then( editor => {
-			window.editor = editor;
-		} )
-		.catch( err => {
-			console.error( err.stack );
-		} );
-
-    
-</script>
 
 
 

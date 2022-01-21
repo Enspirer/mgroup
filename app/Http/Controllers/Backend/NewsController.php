@@ -61,9 +61,7 @@ class NewsController extends Controller
     public function store(Request $request)
     {        
         // dd($request);  
-        if($request->get('description') == null){
-            return back()->withErrors('Please Add Description Section');
-        } 
+    
         if($request->get('image') == null){
             return back()->withErrors('Please Add an Image');
         }         
@@ -99,11 +97,8 @@ class NewsController extends Controller
 
     public function update(Request $request)
     {        
-        // dd($request);                         
-     
-        if($request->get('description') == null){
-            return back()->withErrors('Please Add Description Section');
-        } 
+        // dd($request);                              
+      
         if($request->get('image') == null){
             return back()->withErrors('Please Add an Image');
         }    

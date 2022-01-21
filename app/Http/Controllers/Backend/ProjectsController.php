@@ -47,10 +47,7 @@ class ProjectsController extends Controller
     public function store(Request $request)
     {        
         // dd($request);  
-        if($request->get('description') == null){
-            return back()->withErrors('Please Add Description Section');
-        }       
-
+    
         $add = new Projects;
 
         $add->title = $request->title;        
@@ -77,11 +74,7 @@ class ProjectsController extends Controller
     public function update(Request $request)
     {        
         // dd($request);                         
-     
-        if($request->get('description') == null){
-            return back()->withErrors('Please Add Description Section');
-        }  
-
+    
         $update = new Projects;
 
         $update->title = $request->title;        

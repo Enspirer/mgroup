@@ -16,7 +16,7 @@
                         </div>
                         <div class="form-group">
                             <label>Description <span class="text-danger">*</span></label>
-                            <textarea type="text" id="editor" class="form-control" name="description">{!! $news->description !!}</textarea>
+                            <textarea type="text" class="form-control" name="description" rows="4" required>{{ $news->description }}</textarea>
                         </div> 
                         <div class="form-group">
                             <label>Order <span class="text-danger">*</span></label>
@@ -67,21 +67,6 @@
     </form>
 
     
-    <script>
-        ClassicEditor
-            .create( document.querySelector( '#editor' ), {
-                // toolbar: [ 'heading', '|', 'bold', 'italic', 'link' ]
-            } )
-            .then( editor => {
-                window.editor = editor;
-            } )
-            .catch( err => {
-                console.error( err.stack );
-            } );
-    </script>
-
-
-
 <br><br>
 
 

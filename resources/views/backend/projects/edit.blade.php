@@ -16,7 +16,7 @@
                         </div>
                         <div class="form-group">
                             <label>Description <span class="text-danger">*</span></label>
-                            <textarea type="text" id="editor" class="form-control" name="description">{!! $projects->description !!}</textarea>
+                            <textarea type="text" class="form-control" name="description" rows="4" required>{{ $projects->description }}</textarea>
                         </div> 
                         <div class="form-group">
                             <label>Country <span class="text-danger">*</span></label>
