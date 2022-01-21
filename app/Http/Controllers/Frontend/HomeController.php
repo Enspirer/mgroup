@@ -45,7 +45,7 @@ class HomeController extends Controller
                     'description' => $news->description,
                     'date' => $news->created_at->toDateString(),
                     'status' => "1",
-                    'images' => $news_images
+                    'images' => [$news_images]
                 ];
                 array_push($output,$new_array);
             }
