@@ -31,31 +31,31 @@ class HomeController extends Controller
             $output = [];
 
             foreach($all_news as $key => $news){
-                // dd($news);      
-                
-                $upload_image = Upload::where('id',$news->images)->first();  
+                $upload_image = Upload::where('id',$news->images)->first();
                 $upload_final_name = ltrim($upload_image->file_name, 'uploads/all');    
 
                 $news_images = ['id' => "$upload_image->id",'image' => $upload_final_name];
                 // dd($news_images);            
 
                 $new_array = [
-                    'id' => $news->id,
+                    'id' =>  (string) $news->id,
                     'headline' => $news->title,
                     'description' => $news->description,
                     'date' => $news->created_at->toDateString(),
                     'status' => "1",
                     'images' => [$news_images]
                 ];
+
+
                 array_push($output,$new_array);
             }
-            // dd($output);
+
 
             $final_out = [
                 'status' => 200, 
                 'data' => $output
             ];
-            
+
             return response()->json($final_out);
 
         }else{
@@ -84,14 +84,14 @@ class HomeController extends Controller
                 'description' => $featured_news->description,
                 'date' => $featured_news->created_at->toDateString(),
                 'status' => "1",
-                'images' => [$news_images]
+                'images' => $news_images
             ];
            
             // dd($new_array);
     
             $final_out = [
                 'status' => 200, 
-                'data' => [$new_array]
+                'data' => $new_array
             ];    
             
             return response()->json($final_out); 
@@ -108,9 +108,9 @@ class HomeController extends Controller
 
 
 
-    public function get_all_projects()
+    public function get_all_projects($country_code)
     {
-        $all_projects = Projects::where('status','Enabled')->get();
+        $all_projects = Projects::where('status','Enabled')->where('country',$country_code)->get();
         // dd($all_projects);
        
         if(count($all_projects) != 0){
