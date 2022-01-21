@@ -38,7 +38,7 @@ class HomeController extends Controller
                 // dd($news_images);            
 
                 $new_array = [
-                    'id' => $news->id,
+                    'id' =>  (string) $news->id,
                     'headline' => $news->title,
                     'description' => $news->description,
                     'date' => $news->created_at->toDateString(),
