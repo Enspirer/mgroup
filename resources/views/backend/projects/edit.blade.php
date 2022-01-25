@@ -15,8 +15,8 @@
                             <input type="text" class="form-control" name="title" value="{{ $projects->title }}" required>
                         </div>
                         <div class="form-group">
-                            <label>Description <span class="text-danger">*</span></label>
-                            <textarea type="text" class="form-control" name="description" rows="4" required>{{ $projects->description }}</textarea>
+                            <label>Description</label>
+                            <textarea type="text" class="form-control" name="description" rows="4">{{ $projects->description }}</textarea>
                         </div> 
                         <div class="form-group">
                             <label>Country <span class="text-danger">*</span></label>
@@ -275,10 +275,7 @@
                                 <option value="ZW">Zimbabwe</option>
                             </select>
                         </div>
-                        <div class="form-group">
-                            <label>Order <span class="text-danger">*</span></label>
-                            <input type="number" class="form-control" name="order" value="{{ $projects->order }}" required>
-                        </div>
+                        
                         <div class="form-group">
                             <label>Status <span class="text-danger">*</span></label>
                             <select class="form-control custom-select" name="status" required>

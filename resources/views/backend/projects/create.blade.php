@@ -15,13 +15,13 @@
                             <input type="text" class="form-control" name="title" required>
                         </div>
                         <div class="form-group">
-                            <label>Description <span class="text-danger">*</span></label>
-                            <textarea type="text" class="form-control" name="description" rows="4" required></textarea>
+                            <label>Description</label>
+                            <textarea type="text" class="form-control" name="description" rows="4"></textarea>
                         </div>
                         <div class="form-group">
                             <label>Country <span class="text-danger">*</span></label>
                             <select class="form-control custom-select" id="country" name="country" required>
-                                <option selected disabled>select country</option>
+                                <option value="" selected disabled>select country</option>
                                 <option value="AF">Afghanistan</option>
                                 <option value="AX">Aland Islands</option>
                                 <option value="AL">Albania</option>
@@ -276,10 +276,7 @@
                                 <option value="ZW">Zimbabwe</option>
                             </select>
                         </div>
-                        <div class="form-group">
-                            <label>Order <span class="text-danger">*</span></label>
-                            <input type="number" class="form-control" name="order" required>
-                        </div>
+                       
                         <div class="form-group">
                             <label>Status <span class="text-danger">*</span></label>
                             <select class="form-control custom-select" name="status" required>

@@ -23,7 +23,6 @@
                                 <th scope="col">#ID</th>
                                 <th scope="col">Title</th>
                                 <th scope="col">Country</th>
-                                <th scope="col">Order</th>
                                 <th scope="col">Status</th>
                                 <th scope="col">Option</th>
                             </tr>
@@ -79,7 +78,6 @@
                     {data: 'id', name: 'id'},
                     {data: 'title', name: 'title'},
                     {data: 'country', name: 'country'},
-                    {data: 'order', name: 'order'},
                     {data: 'status', name: 'status'},
                     {data: 'action', name: 'action', orderable: false, searchable: false},
                 ]
